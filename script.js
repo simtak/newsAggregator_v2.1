@@ -5,12 +5,23 @@ document.getElementById("headlines-search-btn").addEventListener("click", (e) =>
     e.preventDefault()
     const queryInput = document.getElementById("headlines-query-input").value
 
+    const categoryRadioCheckArr = document.querySelectorAll("input[name='category-radio']")
+    const categoryInput = getInputFromRadioBtn(categoryRadioCheckArr)
+
+    const countryRadioInputArr = document.querySelectorAll("input[name='country-radio']")
+    const country_input = getInputFromRadioBtn(countryRadioInputArr)
+
+  
     
+       
+    
+
     const dataObject = {
         query: queryInput,
-        country: "",
-        category: ""
+        country: country_input,
+        category: categoryInput
     }
+    
 
     getDataFromApi(dataObject)
 
@@ -42,6 +53,8 @@ async function getDataFromApi(dataObject){
 function displayHeadlineSearchResults(data){
     const container =  document.getElementById("headlines-results-container")
     const apiData = data.articles
+
+    const defImg = "./resources/defaultImg.jpg"
     
 
     const html = apiData.map(element => {
@@ -49,11 +62,11 @@ function displayHeadlineSearchResults(data){
         return `
         <div class="results-box">
             <div class="image-container">
-                <img class="container-img" src="${element.urlToImage}">
+                <img class="container-img" src="${element.urlToImage ? element.urlToImage : defImg}">
             </div>
             <div>
-                <a class="results-box-link" href="${element.url}">${element.title}</a>
-                <p>${element.description}</p>
+                <a class="results-box-link" href="${element.url}" target="_blank">${element.title}</a>
+                <p>${element.description ? element.description : "No preview available"}</p>
             </div>
             <div class="container-meta-infos">
                 <p>Author: ${element.author}</p>
@@ -67,7 +80,23 @@ function displayHeadlineSearchResults(data){
         
     }).join("")
 
+   
     container.innerHTML = html
     
 
 }
+
+// helper functions
+
+function getInputFromRadioBtn(array){
+    let returnValue
+
+    for( const radioBtn of array){
+        if(radioBtn.checked){
+            returnValue = radioBtn.value
+            break
+        }
+    }
+    return returnValue
+}
+

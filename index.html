@@ -7,31 +7,134 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Merriweather:wght@300&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="resources/icons8-news-16.png"/>
     <link rel="stylesheet" href="styles.css">
     <title>News Aggregator.v2.1</title>
 </head>
-<body>
-    <header class="header">
-        <h3>NewsAgg</h3>
-    </header>
-    <main>
-        <div class="headlines-input-container">
-            <h1>Get the latest news and updates from around the world</h1>
-            
-            <form action="" class="headlines-input-form">
-                <input type="text" name="headlines-query-input" id="headlines-query-input">
-                <button id="headlines-search-btn">Search for latest news</button>
-            </form>
-            
-        </div>
-        <div id="headlines-results-container" class="headlines-results-container">
-            
-        </div>
-    </main>
-    <footer></footer>
+
+    <body>
+        <header class="header">
+            <h3>NewsAgg</h3>
+        </header>
+        <main>
+            <div class="headlines-input-container">
+                <h1>Get the latest news and updates from around the world</h1>
+                
+                <form action="" class="headlines-input-form">
+                    <div class="headlines-input-btn-container">
+                        <input type="text" name="headlines-query-input" id="headlines-query-input" placeholder="Add Keywords">
+                        <button id="headlines-search-btn">Search for latest news</button>
+                    </div>
+                    <div class="radio-input-container">
+                        <div>
+                            <ul class="choose_category">
+                                <li>
+                                <input type="radio" id="general" name="category-radio" value="general" />
+                                <label for="general">General</label>
+                                </li>
+                                <li>
+                                <input type="radio" id="entertainment" name="category-radio" value="entertainment"/>
+                                <label for="entertainment">Entertainment</label>
+                                </li>
+                                <li>
+                                <input type="radio" id="business" name="category-radio" value="business" />
+                                <label for="business">Business</label>
+                                </li>
+                                <li>
+                                <input type="radio" id="health" name="category-radio" value="health"/>
+                                <label for="health">Health</label>
+                                </li>
+                                <li>
+                                <input type="radio" id="science" name="category-radio" value="science"/>
+                                <label for="science">Science</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="Sport" name="category-radio" value="sport"/>
+                                    <label for="sport">Sport</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="technology" name="category-radio" value="technology"/>
+                                    <label for="technology">Technology</label>
+                                </li>
+                            </ul>  
+                        </div>
+                        <div>
+                            <ul class="choose_country">
+                                <li>
+                                <input type="radio" id="USA" name="country-radio" value="us" />
+                                <label for="USA">USA</label>
+                                </li>
+                                <li>
+                                <input type="radio" id="UK" name="country-radio" value="gb"/>
+                                <label for="UK">UK</label>
+                                </li>
+                                <li>
+                                <input type="radio" id="Germany" name="country-radio" value="de" />
+                                <label for="Germany">Germany</label>
+                                </li>
+                                <li>
+                                <input type="radio" id="Italy" name="country-radio" value="it"/>
+                                <label for="Italy">Italy</label>
+                                </li>
+                                <li>
+                                <input type="radio" id="Japan" name="country-radio" value="jp"/>
+                                <label for="Japan">Japan</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="France" name="country-radio" value="fr"/>
+                                    <label for="France">France</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="Poland" name="country-radio" value="pl"/>
+                                    <label for="Poland">Poland</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="China" name="country-radio" value="cn"/>
+                                    <label for="China">China</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="Canada" name="country-radio" value="ca"/>
+                                    <label for="Canada">Canada</label>
+                                    <li>
+                                        <input type="radio" id="Australia" name="country-radio" value="au"/>
+                                        <label for="Australia">Australia</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="New_Zeeland" name="country-radio" value="nz"/>
+                                        <label for="New_Zeeland">New Zeeland</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="India" name="country-radio" value="in"/>
+                                        <label for="India">India</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="Brazil" name="country-radio" value="br"/>
+                                        <label for="Brazil">Brazil</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="Israel" name="country-radio" value="il"/>
+                                        <label for="Israel">Israel</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="Hong_Kong" name="country-radio" value="hk"/>
+                                        <label for="Hong_Kong">Hong Kong</label>
+                                    </li>
+                                </li>
+                            </ul>  
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+            <div id="headlines-results-container" class="headlines-results-container">
+                
+            </div>
+        </main>
+      
 
 
 
-    <script src="script.js" type="module"></script>
-</body>
+        <script src="script.js" type="module"></script>
+    </body>
+
 </html>
