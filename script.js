@@ -11,20 +11,13 @@ document.getElementById("headlines-search-btn").addEventListener("click", (e) =>
     const countryRadioInputArr = document.querySelectorAll("input[name='country-radio']")
     const country_input = getInputFromRadioBtn(countryRadioInputArr)
 
-  
-    
-       
-    
-
     const dataObject = {
         query: queryInput,
         country: country_input,
         category: categoryInput
     }
-    
 
     getDataFromApi(dataObject)
-
 
 })
 
@@ -53,10 +46,7 @@ async function getDataFromApi(dataObject){
 function displayHeadlineSearchResults(data){
     const container =  document.getElementById("headlines-results-container")
     const apiData = data.articles
-
     const defImg = "./resources/defaultImg.jpg"
-    
-
     const html = apiData.map(element => {
         
         return `
